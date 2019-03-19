@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keven.BLL", "Keven.BLL.csproj", "{ABA2D09A-AC1C-4FA8-9096-5CB9C0685646}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keven.BLL", "Keven.BLL\Keven.BLL.csproj", "{ABA2D09A-AC1C-4FA8-9096-5CB9C0685646}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keven.Common", "..\Keven.Common\Keven.Common.csproj", "{5747A71F-0CC6-47F9-98D0-A514A8BB3FED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keven.Common", "Keven.Common\Keven.Common.csproj", "{5747A71F-0CC6-47F9-98D0-A514A8BB3FED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keven.DAL", "..\Keven.DAL\Keven.DAL.csproj", "{A13F3D6C-3FB1-4633-B177-E4F0B9AA06E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keven.DAL", "Keven.DAL\Keven.DAL.csproj", "{A13F3D6C-3FB1-4633-B177-E4F0B9AA06E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keven.Manage", "..\Keven.Manage\Keven.Manage.csproj", "{11483C20-C220-463F-86BE-ED661557A93D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keven.Manage", "Keven.Manage\Keven.Manage.csproj", "{11483C20-C220-463F-86BE-ED661557A93D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keven.Model", "..\Keven.Model\Keven.Model.csproj", "{1A84A5D4-C865-41C7-8E2E-C699285B320F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keven.Model", "Keven.Model\Keven.Model.csproj", "{1A84A5D4-C865-41C7-8E2E-C699285B320F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
