@@ -1,0 +1,17 @@
+C:\Project\Keven.TT\Keven.BLL\bin\Release\Keven.BLL.dll.config
+C:\Project\Keven.TT\Keven.BLL\bin\Release\Keven.BLL.dll
+C:\Project\Keven.TT\Keven.BLL\bin\Release\Keven.BLL.pdb
+C:\Project\Keven.TT\Keven.BLL\bin\Release\EntityFramework.dll
+C:\Project\Keven.TT\Keven.BLL\bin\Release\EntityFramework.SqlServer.dll
+C:\Project\Keven.TT\Keven.BLL\bin\Release\Keven.DAL.dll
+C:\Project\Keven.TT\Keven.BLL\bin\Release\Keven.Model.dll
+C:\Project\Keven.TT\Keven.BLL\bin\Release\Keven.DAL.pdb
+C:\Project\Keven.TT\Keven.BLL\bin\Release\Keven.DAL.dll.config
+C:\Project\Keven.TT\Keven.BLL\bin\Release\Keven.Model.pdb
+C:\Project\Keven.TT\Keven.BLL\bin\Release\Keven.Model.dll.config
+C:\Project\Keven.TT\Keven.BLL\bin\Release\EntityFramework.xml
+C:\Project\Keven.TT\Keven.BLL\bin\Release\EntityFramework.SqlServer.xml
+C:\Project\Keven.TT\Keven.BLL\obj\Release\Keven.BLL.csprojResolveAssemblyReference.cache
+C:\Project\Keven.TT\Keven.BLL\obj\Release\Keven.BLL.csproj.CoreCompileInputs.cache
+C:\Project\Keven.TT\Keven.BLL\obj\Release\Keven.BLL.dll
+C:\Project\Keven.TT\Keven.BLL\obj\Release\Keven.BLL.pdb
