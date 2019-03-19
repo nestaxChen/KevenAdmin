@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CD_FEN_LOTTERY_TYPE">
+    <Key>
+      <PropertyRef Name="CODE_VALUE" />
+    </Key>
+    <Property Name="CODE_VALUE" Type="Int32" Nullable="false" />
+    <Property Name="CODE_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="CODE_PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CODE_SORT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CODE_DEL" Type="Int16" />
+  </EntityType>
+  <EntityType Name="CD_HOTEL_BRAND">
+    <Key>
+      <PropertyRef Name="CODE_VALUE" />
+    </Key>
+    <Property Name="CODE_VALUE" Type="Int32" Nullable="false" />
+    <Property Name="CODE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODE_PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CODE_DEL" Type="Int16" />
+    <Property Name="CODE_SORT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CD_ORG_LEVEL">
+    <Key>
+      <PropertyRef Name="CODE_VALUE" />
+    </Key>
+    <Property Name="CODE_VALUE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CODE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODE_PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CODE_DEL" Type="Int16" />
+    <Property Name="CODE_SORT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ID_CODEID">
+    <Key>
+      <PropertyRef Name="ID_NAME" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_VALUE" Type="Int32" Nullable="false" />
+    <Property Name="ID_PRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_DATE_FLAG" Type="Int16" />
+    <Property Name="ID_LENGTH" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PD_Areas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Parent" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Sort" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PD_BASETYPE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PD_CITY">
+    <Key>
+      <PropertyRef Name="PC_ID" />
+    </Key>
+    <Property Name="PC_ID" Type="Int32" Nullable="false" />
+    <Property Name="PC_PP_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PC_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="PC_PINYIN" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="PC_ORDER" Type="Int32" />
+    <Property Name="PC_IS_USE" Type="Int16" />
+    <Property Name="PC_TAOBAO_CODE" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="PC_BAIDU_MAP" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="PC_BRAND" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PD_CITY_REGION">
+    <Key>
+      <PropertyRef Name="CR_ID" />
+    </Key>
+    <Property Name="CR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CR_PP_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CR_PC_ID" Type="Int32" Nullable="false" />
+    <Property Name="CR_AREA_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CR_ORDER" Type="Int32" />
+    <Property Name="CR_TAOBAO_CODE" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PD_HOTEL">
+    <Key>
+      <PropertyRef Name="PH_NO" />
+    </Key>
+    <Property Name="PH_NO" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PH_PP_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PH_PC_ID" Type="Int32" />
+    <Property Name="PH_NAME" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="PH_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PH_ADDRESS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PD_PROVINCES">
+    <Key>
+      <PropertyRef Name="PP_ID" />
+    </Key>
+    <Property Name="PP_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PP_Parent" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="PP_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="PP_ORDER" Type="Int32" />
+    <Property Name="PP_TAOBAO_CODE" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PD_TYPE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tid" Type="Int32" />
+    <Property Name="TypeId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ImgName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ImgPath" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="ImgType" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ImgSize" Type="Int32" />
+    <Property Name="ImgPic" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SYS_APPLICATION">
+    <Key>
+      <PropertyRef Name="APP_ID" />
+    </Key>
+    <Property Name="APP_ID" Type="Int32" Nullable="false" />
+    <Property Name="APP_SHORT_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APP_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="APP_ORDER" Type="Int32" />
+    <Property Name="APP_AUTH_ADDRESS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="APP_AUTH_CODE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SYS_FUNCTION">
+    <Key>
+      <PropertyRef Name="FN_ID" />
+    </Key>
+    <Property Name="FN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FN_APP_ID" Type="Int32" />
+    <Property Name="FN_SHORT_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="FN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FN_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FN_PARENT_ID" Type="Int32" />
+    <Property Name="FN_IS_LEAF" Type="Int16" />
+    <Property Name="FN_TREE_LAYER" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FN_ORDER" Type="Int32" />
+    <Property Name="FN_REVERSE1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FN_REVERSE2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SYS_ORGANIZATION">
+    <Key>
+      <PropertyRef Name="ORG_ID" />
+    </Key>
+    <Property Name="ORG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORG_CITY" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="ORG_LEVEL" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="ORG_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_CODE" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_LAYER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_PARENT_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_IS_LEAF" Type="Int16" />
+    <Property Name="ORG_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_MANAGER_PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_ADDRESS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_BILL_ADDRESS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_POST_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_TELEPHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_UNITE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_ACTIVE" Type="Int16" />
+    <Property Name="ORG_NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_CREATE_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="ORG_UPDATE_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="ORG_UNUSED1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_UNUSED2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_UNUSED3" Type="Int32" />
+    <Property Name="ORG_UNUSED4" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SYS_PART_APP">
+    <Key>
+      <PropertyRef Name="PA_APP_ID" />
+      <PropertyRef Name="PA_PART_ID" />
+    </Key>
+    <Property Name="PA_APP_ID" Type="Int32" Nullable="false" />
+    <Property Name="PA_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="PA_IS_FUNC" Type="Int16" />
+  </EntityType>
+  <EntityType Name="SYS_PART_FUNC">
+    <Key>
+      <PropertyRef Name="PF_PART_ID" />
+      <PropertyRef Name="PF_FN_ID" />
+    </Key>
+    <Property Name="PF_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="PF_FN_ID" Type="Int32" Nullable="false" />
+    <Property Name="PF_IS_FUNC" Type="Int16" />
+  </EntityType>
+  <EntityType Name="SYS_PART_SUB_FUNC">
+    <Key>
+      <PropertyRef Name="PSF_PART_ID" />
+      <PropertyRef Name="PSF_SF_ID" />
+    </Key>
+    <Property Name="PSF_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="PSF_SF_ID" Type="Int32" Nullable="false" />
+    <Property Name="PSF_IS_FUNC" Type="Int16" />
+  </EntityType>
+  <EntityType Name="SYS_SUB_FUNC">
+    <Key>
+      <PropertyRef Name="SF_ID" />
+    </Key>
+    <Property Name="SF_ID" Type="Int32" Nullable="false" />
+    <Property Name="SF_FN_ID" Type="Int32" Nullable="false" />
+    <Property Name="SF_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SF_NAME_ID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UR_PART">
+    <Key>
+      <PropertyRef Name="PART_ID" />
+    </Key>
+    <Property Name="PART_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PART_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PART_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PART_CHAR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PART_OWNER" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UR_USERS">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="USER_ORG_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="USER_LOGIN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_LOGIN_PASSWD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_LOGIN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="USER_PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_MOBILE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="USER_WORK_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="USER_SEX" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="USER_BIRTHDAY" Type="DateTime" Precision="3" />
+    <Property Name="USER_WORKED" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="USER_EDUCATION" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="USER_ORIGIN" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="USER_TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_WORK_LIMIT" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="USER_IDENT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_IN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="USER_AREA" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="USER_ADDRESS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="USER_POSTAL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="USER_ACTIVE" Type="Int16" />
+    <Property Name="USER_OUT" Type="Int16" />
+    <Property Name="USER_OUT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="USER_NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="USER_CREATE_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="USER_CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="USER_UPDATE_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="USER_UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="USER_PASSWD_CHANGE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="USER_UNLOCK_DATE" Type="DateTime" Precision="3" />
+    <Property Name="USER_ADMIN" Type="Int16" />
+    <Property Name="USER_UNUSED1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="USER_UNUSED2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="USER_UNUSED3" Type="Int32" />
+    <Property Name="USER_UNUSED4" Type="Int32" />
+    <Property Name="USER_CHANNEL_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UR_USERS_PART">
+    <Key>
+      <PropertyRef Name="UP_USER_ID" />
+      <PropertyRef Name="UP_PART_ID" />
+    </Key>
+    <Property Name="UP_USER_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UP_PART_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="YR_Advertising">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdvName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="AdvType" Type="Int32" />
+    <Property Name="AdvMemo" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="AdvRemark" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="ImgName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ImgPath" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="ImgType" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ImgSize" Type="Int32" />
+    <Property Name="ImgPic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="BeginDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="CREATE_ID" Type="Int32" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_ID" Type="Int32" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="YR_ApiLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Url" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="PostCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Result" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="PostDate" Type="DateTime" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="IP" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Memo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="YR_Card">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="IsTrue" Type="Int16" />
+    <Property Name="CardType" Type="Int32" />
+    <Property Name="CardBank" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CardNo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CardDate" Type="DateTime" Precision="3" />
+    <Property Name="CardExpired" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CVV2" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CardPhone" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="CardName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Province" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="CardLen" Type="Int32" />
+    <Property Name="LOGO" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="BankTel" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="BankWebsite" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="IsCorrect" Type="Int32" />
+    <Property Name="IsDelete" Type="Int16" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Create_Id" Type="Int32" />
+    <Property Name="IsDefault" Type="Int16" />
+    <Property Name="Result" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="CardImg" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="CardImg2" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="YR_FeedBack">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateId" Type="Int32" />
+    <Property Name="Reply" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="ReplyDate" Type="DateTime" Precision="3" />
+    <Property Name="ReplyId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="YR_Finance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="UseMoney" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Remcount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Memo" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="OrderId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ProType" Type="Int32" />
+    <Property Name="IsDelete" Type="Int16" />
+    <Property Name="Remark" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="YR_Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ToUserId" Type="Int32" />
+    <Property Name="SysadminId" Type="Int32" />
+    <Property Name="SendTime" Type="DateTime" Precision="3" />
+    <Property Name="AddTime" Type="DateTime" Precision="3" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="IsTiming" Type="Int16" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Alert" Type="String" MaxLength="58" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="Int32" />
+    <Property Name="IsRead" Type="Int16" />
+    <Property Name="IsDelete" Type="Int16" />
+  </EntityType>
+  <EntityType Name="YR_Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNo" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="TradeNo" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Timestamp" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="PayCardId" Type="Int32" />
+    <Property Name="PayCardNo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CardNo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="UseMoney" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrderType" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CheckStatus" Type="Int32" />
+    <Property Name="CheckDate" Type="DateTime" Precision="3" />
+    <Property Name="CheckId" Type="Int32" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Create_Id" Type="Int32" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_Id" Type="Int32" />
+    <Property Name="Result" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="Memo" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="YR_SMS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SendDate" Type="DateTime" Precision="3" />
+    <Property Name="Mobile" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="iMessage" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Verification" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Response" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="YR_UpgradeLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="Int16" />
+    <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="YR_User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TrueName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="NickName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Province" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Zipcode" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="QQ" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Token" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ReToken" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Create_date" Type="DateTime" Precision="3" />
+    <Property Name="Update_date" Type="DateTime" Precision="3" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Moblie" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="CardNum" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="IsTrueMoblie" Type="Int16" />
+    <Property Name="IsTrueCard" Type="Int16" />
+    <Property Name="IsTrueEmail" Type="Int16" />
+    <Property Name="GradeId" Type="Int16" />
+    <Property Name="Grade" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="IsAdmin" Type="Int16" />
+    <Property Name="CloudToken" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="Weixin" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Alipay" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="MyMoney" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Signature" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Sex" Type="Int32" />
+    <Property Name="ImgName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ImgPath" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="ImgType" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ImgSize" Type="Int32" />
+    <Property Name="ImgPic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FrozenMoney" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="GetMoeny" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="GetNum" Type="Int32" />
+    <Property Name="CostMoney" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CostNum" Type="Int32" />
+    <Property Name="TuiJian" Type="Int32" />
+    <Property Name="UserLevel" Type="Int32" />
+    <Property Name="FeiLv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IsDaiLi" Type="Int16" />
+    <Property Name="IsEpay" Type="Int16" />
+    <Property Name="Result" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="Idcard" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="Idcard2" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="HeadIdcard" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="BankCard" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="BankCard2" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="CheckId" Type="Int32" />
+    <Property Name="CheckMemo" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="CheckDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="YR_UserLevel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="FeiLv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Remark" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="YR_Versions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Patch" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ApkSize" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="PatchUrl" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="IsDebug" Type="Int16" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CD_FEN_LOTTERY_TYPE" EntityType="Self.CD_FEN_LOTTERY_TYPE" />
+    <EntitySet Name="CD_HOTEL_BRAND" EntityType="Self.CD_HOTEL_BRAND" />
+    <EntitySet Name="CD_ORG_LEVEL" EntityType="Self.CD_ORG_LEVEL" />
+    <EntitySet Name="ID_CODEID" EntityType="Self.ID_CODEID" />
+    <EntitySet Name="PD_Areas" EntityType="Self.PD_Areas" />
+    <EntitySet Name="PD_BASETYPE" EntityType="Self.PD_BASETYPE" />
+    <EntitySet Name="PD_CITY" EntityType="Self.PD_CITY" />
+    <EntitySet Name="PD_CITY_REGION" EntityType="Self.PD_CITY_REGION" />
+    <EntitySet Name="PD_HOTEL" EntityType="Self.PD_HOTEL" />
+    <EntitySet Name="PD_PROVINCES" EntityType="Self.PD_PROVINCES" />
+    <EntitySet Name="PD_TYPE" EntityType="Self.PD_TYPE" />
+    <EntitySet Name="SYS_APPLICATION" EntityType="Self.SYS_APPLICATION" />
+    <EntitySet Name="SYS_FUNCTION" EntityType="Self.SYS_FUNCTION" />
+    <EntitySet Name="SYS_ORGANIZATION" EntityType="Self.SYS_ORGANIZATION" />
+    <EntitySet Name="SYS_PART_APP" EntityType="Self.SYS_PART_APP" />
+    <EntitySet Name="SYS_PART_FUNC" EntityType="Self.SYS_PART_FUNC" />
+    <EntitySet Name="SYS_PART_SUB_FUNC" EntityType="Self.SYS_PART_SUB_FUNC" />
+    <EntitySet Name="SYS_SUB_FUNC" EntityType="Self.SYS_SUB_FUNC" />
+    <EntitySet Name="UR_PART" EntityType="Self.UR_PART" />
+    <EntitySet Name="UR_USERS" EntityType="Self.UR_USERS" />
+    <EntitySet Name="UR_USERS_PART" EntityType="Self.UR_USERS_PART" />
+    <EntitySet Name="YR_Advertising" EntityType="Self.YR_Advertising" />
+    <EntitySet Name="YR_ApiLog" EntityType="Self.YR_ApiLog" />
+    <EntitySet Name="YR_Card" EntityType="Self.YR_Card" />
+    <EntitySet Name="YR_FeedBack" EntityType="Self.YR_FeedBack" />
+    <EntitySet Name="YR_Finance" EntityType="Self.YR_Finance" />
+    <EntitySet Name="YR_Message" EntityType="Self.YR_Message" />
+    <EntitySet Name="YR_Order" EntityType="Self.YR_Order" />
+    <EntitySet Name="YR_SMS" EntityType="Self.YR_SMS" />
+    <EntitySet Name="YR_UpgradeLog" EntityType="Self.YR_UpgradeLog" />
+    <EntitySet Name="YR_User" EntityType="Self.YR_User" />
+    <EntitySet Name="YR_UserLevel" EntityType="Self.YR_UserLevel" />
+    <EntitySet Name="YR_Versions" EntityType="Self.YR_Versions" />
+  </EntityContainer>
+</Schema>

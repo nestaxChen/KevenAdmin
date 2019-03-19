@@ -1,0 +1,368 @@
+﻿@model Keven.Model.TT_Trademark_Applyer
+@{
+    ViewBag.Title = "申请人管理";
+    ViewBag.Sidebar = 210;
+
+    Dictionary<int, string> allNationality = ViewBag.DicNationality as Dictionary<int, string>;
+    Dictionary<int, string> allType = ViewBag.DicType as Dictionary<int, string>;
+    Dictionary<int, string> allCerificateType = ViewBag.DicCerificateType as Dictionary<int, string>;
+
+    List<Keven.Model.PD_Areas> allAreas = ViewBag.allArea as List<Keven.Model.PD_Areas>;
+
+}
+<link href="~/Content/Css/webuploader.css" rel="stylesheet" />
+<script src="~/Content/Scripts/webuploader.min.js"></script>
+<script src="~/Content/Scripts/webuploader_init.js"></script>
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            申请人管理
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#"><i class="fa fa-dashboard"></i> 首页</a>
+            </li>
+            <li>
+                <a href="#">系统设置</a>
+            </li>
+            <li class="active">
+                商标业务
+            </li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">
+                            商标业务
+                        </h3>
+                    </div><!-- /.box-header -->
+                    @if (ViewBag.Success != null)
+                    {
+                        <div class="box-body">
+                            <div class="alert @(ViewBag.Success ? "alert-success": "alert-error") alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4>
+                                    <i class="icon fa @(ViewBag.Success ? "fa-check": "fa-close")"></i> 提示！
+                                </h4>
+                                @ViewBag.Message
+                            </div>
+                            @if (ViewBag.Success)
+                            {
+                                <script>setTimeout(function () { location.href = "@Url.Content("~/Trademark/ApplyerList")" }, 1500);</script>
+                            }
+                        </div>
+                    }
+
+                    <form action="~/Trademark/ApplyerEdit" method="post" class="form-horizontal">
+                        <div class="box-body" style="display: block;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <!--隐藏-->
+                                        @Html.HiddenFor(t => t.Id)
+                                        @Html.HiddenFor(t => t.IsDefault)
+                                        @Html.HiddenFor(t => t.KefuId)
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">模板名称</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.TemplateName, new { @class = "form-control", @placeholder = "模板名称" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">用户</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.UserId, new { @class = "form-control", @placeholder = "用户", @readonly = "readonly" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">类型</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <select name="nationality" class="form-control select2">
+                                                        <option value="">请选择</option>
+                                                        @foreach (var t in allNationality)
+                                                        {
+                                                            <option value="@t.Key" @(Model.Nationality == t.Key ? "selected" : "")>@t.Value</option>
+
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <select name="type" class="form-control select2">
+                                                        <option value="">请选择</option>
+                                                        @foreach (var t in allType)
+                                                        {
+                                                            <option value="@t.Key" @(Model.Type == t.Key ? "selected" : "")>@t.Value</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">申请人名称</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.Name, new { @class = "form-control", @placeholder = "申请人名称" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">申请人名称（英文）</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.NameEn, new { @class = "form-control", @placeholder = "申请人名称（英文）" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">证件类型</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <select name="cerificateType" class="form-control select2">
+                                                        <option value="">请选择</option>
+                                                        @foreach (var t in allCerificateType)
+                                                        {
+                                                            <option value="@t.Key" @(Model.CerificateType == t.Key ? "selected" : "")>@t.Value</option>
+
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">证件号码</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.CerificateNumber, new { @class = "form-control", @placeholder = "证件号码" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">信用代码/税号</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.BusinessNumber, new { @class = "form-control", @placeholder = "信用代码/税号" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">证件</label>
+                                        <div class="col-sm-10">
+                                            <div id="CerificateFileBtnId">
+                                                <img src="~/Content/Img/upload_big.png" class="layer-input" style="width:120px;" id="CerificateFileImg" />
+
+                                            </div>
+                                            @Html.HiddenFor(t => t.CerificateFile)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">证件（反面）</label>
+                                        <div class="col-sm-10">
+                                            <div class="file-input" id="CerificateFile2BtnId">
+                                                <img src="~/Content/Img/upload_big.png" class="layer-input" style="width:120px;" id="CerificateFile2Img" />
+                                            </div>
+                                            @Html.HiddenFor(t => t.CerificateFile2)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">主体资格证明文件</label>
+                                        <div class="col-sm-10">
+                                            <div class="file-input" id="BusinessFileBtnId">
+                                                <img src="~/Content/Img/upload_big.png" class="layer-input" style="width:120px;" id="BusinessFileImg" />
+                                            </div>
+                                            @Html.HiddenFor(t => t.BusinessFile)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">主体资格证明文件（外）</label>
+                                        <div class="col-sm-10">
+                                            <div class="file-input" id="BusinessFileEnBtnId">
+                                                <img src="~/Content/Img/upload_big.png" class="layer-input" style="width:120px;" id="BusinessFileEnImg" />
+                                            </div>
+                                            @Html.HiddenFor(t => t.BusinessFileEn)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">省/市/区</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <select name="Province" id="ddlProvince" onchange="GetCity()" class="form-control select2">
+                                                        @foreach (var t in allAreas.Where(t => t.Parent == "CN"))
+                                                        {
+                                                            <option value="@t.Id" @(Model.Province == t.Id ? "selected" : "")>@t.Name</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <select name="City" id="ddlCity" onchange="GetDict()" class="form-control select2">
+                                                        @foreach (var t in allAreas.Where(t => t.Parent == (Model.Province == null ? "110000" : Model.Province)))
+                                                        {
+                                                            <option value="@t.Id" @(Model.City == t.Id ? "selected" : "")>@t.Name</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <select name="District" id="ddlDistrict" class="form-control select2">
+                                                        @foreach (var t in allAreas.Where(t => t.Parent == (Model.Province == null ? "110100" : Model.City)))
+                                                        {
+                                                            <option value="@t.Id" @(Model.District == t.Id ? "selected" : "")>@t.Name</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">申请人地址</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.Address, new { @class = "form-control", @placeholder = "申请人名称" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">申请人地址（英文）</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.AddressEn, new { @class = "form-control", @placeholder = "申请人名称（英文）" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">联系人姓名</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.ReceiveName, new { @class = "form-control", @placeholder = "联系人姓名" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">联系人电话</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.ReceivePhone, new { @class = "form-control", @placeholder = "联系人电话" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">联系人传真</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.ReceiveFax, new { @class = "form-control", @placeholder = "联系人传真" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">联系人邮箱</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.ReceiveEmail, new { @class = "form-control", @placeholder = "联系人邮箱" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">状态</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.Status, new { @class = "form-control", @placeholder = "申请人名称（英文）" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">审核人</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.Auditor, new { @class = "form-control", @placeholder = "审核人" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">审核时间</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.AuditDate, new { @class = "form-control", @placeholder = "审核时间", @readonly = "readonly" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">添加时间</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.CreateDate, new { @class = "form-control", @placeholder = "添加时间", @readonly = "readonly" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">修改时间</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.UpdateDate, new { @class = "form-control", @placeholder = "修改时间", @readonly = "readonly" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">隐私保护</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.IsPrivacy, new { @class = "form-control", @placeholder = "申请人名称（英文）" })
+                                        </div>
+                                    </div>
+                                    <div class="box-footer">
+                                        <div class="pull-right">
+                                            <button type="submit" class="btn btn-primary">保存</button>
+                                            <a class="btn btn-default" href="~/Trademark/ApplyerList">取消</a>
+                                        </div>
+                                    </div>
+
+                                </div><!-- /.col -->
+                            </div><!-- /.row -->
+                        </div><!-- /.box-body -->
+                    </form>
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </section><!-- /.content -->
+</div>
+
+
+<script type="text/javascript">
+    // 初始化图片上传
+    var cerificateFile = new $WebUpload('CerificateFile', 'CerificateFile');
+    cerificateFile.init();
+
+    var cerificateFile2 = new $WebUpload('CerificateFile2', 'CerificateFile2');
+    cerificateFile2.init();
+
+    var BusinessFile = new $WebUpload('BusinessFile', 'BusinessFile');
+    BusinessFile.init();
+
+    var BusinessFileEn = new $WebUpload('BusinessFileEn', 'BusinessFileEn');
+    BusinessFileEn.init();
+    
+
+    function GetCity() {
+        //判断省份是否有id
+        var id = $("#ddlProvince").val();
+        if (id == null) {
+            $("#ddlCity").empty().append("<option>请选择城市</option>");
+            return;
+        }
+        else {
+            $("#ddlCity").empty().append("<option>请选择城市</option>");
+            $("#ddlDistrict").empty().append("<option>请选择城区</option>");
+        }
+        $.ajax({
+            url: "/Trademark/GetCity?province=" + id,
+            type: "POST",
+            success: function (data) {
+                $("#ddlCity").empty().append("<option>请选择城市</option>");
+                $(data).each(function () {
+                    $("#ddlCity").append("<option value='" + this.Id + "'>" + this.Name + "</option>")
+                })
+            }
+        })
+    }
+    //获取地区
+    function GetDict() {
+        var id = $("#ddlCity").val();
+        if (id == null) {
+            $("#ddlDistrict").empty().append("<option>请选择城区</option>");
+            return;
+        }
+        $.ajax({
+            url: "/Trademark/GetDistrict?city=" + id,
+            type: "POST",
+            success: function (data) {
+                $("#ddlDistrict").empty().append("<option>请选择城区</option>");
+                $(data).each(function () {
+                    $("#ddlDistrict").append("<option value='" + this.Id + "'>" + this.Name + "</option>")
+                })
+            }
+        })
+    }
+
+</script>

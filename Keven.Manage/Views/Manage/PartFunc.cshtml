@@ -1,0 +1,144 @@
+﻿@model Keven.Manage.Models.ManageModels
+@{
+    ViewBag.Title = "角色权限";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            资料详细
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#"><i class="fa fa-dashboard"></i> 首页</a>
+            </li>
+            <li>
+                <a href="#">系统设置</a>
+            </li>
+            <li class="active">
+                角色管理
+            </li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">
+                            角色权限
+                        </h3>
+                    </div><!-- /.box-header -->
+                    @if (ViewBag.Success != null)
+                    {
+                        <div class="box-body">
+                            <div class="alert @(ViewBag.Success ? "alert-success": "alert-error") alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4>
+                                    <i class="icon fa @(ViewBag.Success ? "fa-check": "fa-close")"></i> 提示！
+                                </h4>
+                                @ViewBag.Message
+                            </div>
+                            @if (ViewBag.Success)
+                            {
+                            <script>setTimeout(function () { location.href = "@Url.Content("~/Manage/PartList")" }, 1500);</script>
+                            }
+                        </div>
+                    }
+
+                    <form action="~/Manage/PartEdit" method="post" class="form-horizontal">
+                        <div class="box-body" style="display: block;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <!--隐藏-->
+                                        @Html.HiddenFor(t => t.part.PART_ID)
+                                    </div>
+                                    <div class="form-group">
+                                        @foreach (var parent in Model.allFunc.Where(t => t.FN_PARENT_ID == -1).ToList().OrderBy(t => t.FN_ORDER))
+                                        {
+                                            <div class="col-sm-3">
+                                                <ul class="list-unstyled" id="ul@(parent.FN_ID)">
+                                                    <li>
+                                                        <h4>
+                                                            <input type="checkbox" class="minimal" value="@(parent.FN_ID)" checked onclick="setChildMode(this.checked,@(parent.FN_ID));">@parent.FN_NAME
+                                                        </h4>
+                                                    </li>
+                                                    @foreach (var func in Model.allFunc.Where(t => t.FN_PARENT_ID == parent.FN_ID).ToList().OrderBy(t => t.FN_ORDER))
+                                                    {
+                                                        <li>
+                                                            @*<i class="fa fa-fw fa-plus-square-o"></i>*@
+                                                            &nbsp;
+                                                            <input type="checkbox" class="minimal" name="cb@(parent.FN_ID)" value="@(func.FN_ID)" @(Model.allPartFunc.Where(t => t.PF_FN_ID == func.FN_ID).FirstOrDefault() != null ? "checked" : "" ) />
+                                                            @func.FN_NAME
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div class="box-footer">
+                                        <div class="pull-right">
+                                            <a class="btn btn-primary" onclick="SavePartFunc()">保存</a>
+                                            <a class="btn btn-default" href="~/Manage/PartList">取消</a>
+                                        </div>
+                                    </div>
+                                </div><!-- /.col -->
+                            </div><!-- /.row -->
+                        </div><!-- /.box-body -->
+                    </form>
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </section><!-- /.content -->
+</div>
+
+
+<script type="text/javascript">
+
+    function setChildMode(check, id) {
+        var cbs = document.getElementsByName("cb" + id);
+        for (var i = 0; i < cbs.length; i++) {
+            cbs[i].checked = check;
+        }
+    }
+
+    function SavePartFunc() {
+        var func = $("input:checked");
+        var funcs = "";
+        for (var i = 0; i < func.length; i++) {
+            funcs +=","+ func[i].value;
+        }
+         $.myConfirm({
+             title: '确定更新角色权限吗？', message: '确定更新角色权限吗！', callback: function () {
+                $.ajax({
+                    url: '/Manage/SavePartFunc?t=' + Math.random(),
+                    method: 'POST',
+                    data: { id: '@Model.part.PART_ID', funcIds: funcs.substring(1) },
+                    dataType: 'json',
+                    beforeSend: function () {
+                    },
+                    complete: function () {
+                    },
+                    success: function (data) {
+                        if (data.status_code == "0") {
+                            $.myAlert({
+                                title: '提示', message: data.message, callback: function () {
+                                    window.location.reload();
+                                }
+                            });
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+        })
+
+    }
+
+
+</script>

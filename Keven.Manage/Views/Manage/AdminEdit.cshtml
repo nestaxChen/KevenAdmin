@@ -1,0 +1,175 @@
+﻿@model Keven.Model.UR_USERS
+@{
+    ViewBag.Title = "管理员详细";
+    ViewBag.Sidebar = 20;
+
+    Dictionary<int, string> dicOrganization = ViewBag.Organization as Dictionary<int, string>;
+    Dictionary<int, string> dicPart = ViewBag.Part as Dictionary<int, string>;
+
+
+
+}
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            资料详细
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#"><i class="fa fa-dashboard"></i> 首页</a>
+            </li>
+            <li>
+                <a href="#">系统设置</a>
+            </li>
+            <li class="active">
+                用户信息
+            </li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">
+                            用户信息
+                        </h3>
+                    </div><!-- /.box-header -->
+                    @if (ViewBag.Success != null)
+                    {
+                        <div class="box-body">
+                            <div class="alert @(ViewBag.Success ? "alert-success": "alert-error") alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4>
+                                    <i class="icon fa @(ViewBag.Success ? "fa-check": "fa-close")"></i> 提示！
+                                </h4>
+                                @ViewBag.Message
+                            </div>
+                            @if (ViewBag.Success)
+                            {
+                                <script>setTimeout(function () { location.href = "@Url.Content("~/Manage/AdminList")" }, 1500);</script>
+                            }
+                        </div>
+                    }
+
+                    <form action="~/Manage/AdminEdit" method="post" class="form-horizontal">
+                        <div class="box-body" style="display: block;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <!--隐藏-->
+                                        @Html.HiddenFor(t => t.USER_ID)
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">用户姓名</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.USER_NAME, new { @class = "form-control", @placeholder = "用户姓名" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">所属机构</label>
+                                        <div class="col-sm-10">
+                                            <select name="USER_ORG_ID" class="form-control">
+                                                @foreach (var org in dicOrganization)
+                                                {
+                                                    <option value="@org.Key.ToString()" @(Model.USER_ORG_ID == org.Key.ToString() ? "selected" : "")>@org.Value</option>
+
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">职位</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.USER_TITLE, new { @class = "form-control", @placeholder = "职位" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">用户角色</label>
+                                        <div class="col-sm-10">
+                                            <select name="USER_PART" class="form-control">
+                                                @foreach (var part in dicPart)
+                                                {
+                                                    <option value="@part.Key" @(Model.USER_PART == part.Key ? "selected" : "")>@part.Value</option>
+
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">登录名</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.USER_LOGIN_NAME, new { @class = "form-control", @placeholder = "登录名" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">联系电话</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.USER_PHONE, new { @class = "form-control", @placeholder = "联系电话" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">手机</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.USER_MOBILE, new { @class = "form-control", @placeholder = "手机" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">邮箱</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.USER_EMAIL, new { @class = "form-control", @placeholder = "邮箱" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">工号</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(t => t.USER_WORK_NO, new { @class = "form-control", @placeholder = "工号" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">性别</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control " name="USER_SEX">
+                                                <option></option>
+                                                <option value="男" @(Model.USER_SEX == "男" ? "selected" : "")>男</option>
+                                                <option value="女" @(Model.USER_SEX == "女" ? "selected" : "")>女</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    @*<div class="form-group">
+                                        <label class="col-sm-2 control-label">有效用户</label>
+                                        <div class="col-sm-10">
+                                            <input type="checkbox" @(Model.USER_ACTIVE == 1 ? "checked" : "" ) name="USER_ACTIVE" value="1" placeholder="有效用户">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">超级用户</label>
+                                        <div class="col-sm-10">
+                                            <input type="checkbox" @(Model.USER_ADMIN == 1 ? "checked" : "" ) name="USER_ADMIN" value="1" placeholder="超级用户">
+                                        </div>
+                                    </div>*@
+                                    <div class="box-footer">
+                                        <div class="pull-right">
+                                            <button type="submit" class="btn btn-primary">保存</button>
+                                            <a class="btn btn-default" href="~/Manage/AdminList">取消</a>
+                                        </div>
+                                    </div>
+
+
+                                </div><!-- /.col -->
+                            </div><!-- /.row -->
+                        </div><!-- /.box-body -->
+                    </form>
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </section><!-- /.content -->
+</div>
+
+

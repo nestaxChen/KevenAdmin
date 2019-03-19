@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DemoModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="CD_FEN_LOTTERY_TYPE">
+      <EntityTypeMapping TypeName="DemoModel.CD_FEN_LOTTERY_TYPE">
+        <MappingFragment StoreEntitySet="CD_FEN_LOTTERY_TYPE">
+          <ScalarProperty Name="CODE_VALUE" ColumnName="CODE_VALUE" />
+          <ScalarProperty Name="CODE_NAME" ColumnName="CODE_NAME" />
+          <ScalarProperty Name="CODE_PY" ColumnName="CODE_PY" />
+          <ScalarProperty Name="CODE_SORT" ColumnName="CODE_SORT" />
+          <ScalarProperty Name="CODE_DEL" ColumnName="CODE_DEL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CD_HOTEL_BRAND">
+      <EntityTypeMapping TypeName="DemoModel.CD_HOTEL_BRAND">
+        <MappingFragment StoreEntitySet="CD_HOTEL_BRAND">
+          <ScalarProperty Name="CODE_VALUE" ColumnName="CODE_VALUE" />
+          <ScalarProperty Name="CODE_NAME" ColumnName="CODE_NAME" />
+          <ScalarProperty Name="CODE_PY" ColumnName="CODE_PY" />
+          <ScalarProperty Name="CODE_DEL" ColumnName="CODE_DEL" />
+          <ScalarProperty Name="CODE_SORT" ColumnName="CODE_SORT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CD_ORG_LEVEL">
+      <EntityTypeMapping TypeName="DemoModel.CD_ORG_LEVEL">
+        <MappingFragment StoreEntitySet="CD_ORG_LEVEL">
+          <ScalarProperty Name="CODE_VALUE" ColumnName="CODE_VALUE" />
+          <ScalarProperty Name="CODE_NAME" ColumnName="CODE_NAME" />
+          <ScalarProperty Name="CODE_PY" ColumnName="CODE_PY" />
+          <ScalarProperty Name="CODE_DEL" ColumnName="CODE_DEL" />
+          <ScalarProperty Name="CODE_SORT" ColumnName="CODE_SORT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ID_CODEID">
+      <EntityTypeMapping TypeName="DemoModel.ID_CODEID">
+        <MappingFragment StoreEntitySet="ID_CODEID">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_NAME" ColumnName="ID_NAME" />
+          <ScalarProperty Name="ID_VALUE" ColumnName="ID_VALUE" />
+          <ScalarProperty Name="ID_PRE" ColumnName="ID_PRE" />
+          <ScalarProperty Name="ID_DATE_FLAG" ColumnName="ID_DATE_FLAG" />
+          <ScalarProperty Name="ID_LENGTH" ColumnName="ID_LENGTH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PD_Areas">
+      <EntityTypeMapping TypeName="DemoModel.PD_Areas">
+        <MappingFragment StoreEntitySet="PD_Areas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PD_BASETYPE">
+      <EntityTypeMapping TypeName="DemoModel.PD_BASETYPE">
+        <MappingFragment StoreEntitySet="PD_BASETYPE">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PD_CITY">
+      <EntityTypeMapping TypeName="DemoModel.PD_CITY">
+        <MappingFragment StoreEntitySet="PD_CITY">
+          <ScalarProperty Name="PC_ID" ColumnName="PC_ID" />
+          <ScalarProperty Name="PC_PP_ID" ColumnName="PC_PP_ID" />
+          <ScalarProperty Name="PC_NAME" ColumnName="PC_NAME" />
+          <ScalarProperty Name="PC_PINYIN" ColumnName="PC_PINYIN" />
+          <ScalarProperty Name="PC_ORDER" ColumnName="PC_ORDER" />
+          <ScalarProperty Name="PC_IS_USE" ColumnName="PC_IS_USE" />
+          <ScalarProperty Name="PC_TAOBAO_CODE" ColumnName="PC_TAOBAO_CODE" />
+          <ScalarProperty Name="PC_BAIDU_MAP" ColumnName="PC_BAIDU_MAP" />
+          <ScalarProperty Name="PC_BRAND" ColumnName="PC_BRAND" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PD_CITY_REGION">
+      <EntityTypeMapping TypeName="DemoModel.PD_CITY_REGION">
+        <MappingFragment StoreEntitySet="PD_CITY_REGION">
+          <ScalarProperty Name="CR_ID" ColumnName="CR_ID" />
+          <ScalarProperty Name="CR_PP_ID" ColumnName="CR_PP_ID" />
+          <ScalarProperty Name="CR_PC_ID" ColumnName="CR_PC_ID" />
+          <ScalarProperty Name="CR_AREA_NAME" ColumnName="CR_AREA_NAME" />
+          <ScalarProperty Name="CR_ORDER" ColumnName="CR_ORDER" />
+          <ScalarProperty Name="CR_TAOBAO_CODE" ColumnName="CR_TAOBAO_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PD_HOTEL">
+      <EntityTypeMapping TypeName="DemoModel.PD_HOTEL">
+        <MappingFragment StoreEntitySet="PD_HOTEL">
+          <ScalarProperty Name="PH_NO" ColumnName="PH_NO" />
+          <ScalarProperty Name="PH_PP_ID" ColumnName="PH_PP_ID" />
+          <ScalarProperty Name="PH_PC_ID" ColumnName="PH_PC_ID" />
+          <ScalarProperty Name="PH_NAME" ColumnName="PH_NAME" />
+          <ScalarProperty Name="PH_DESC" ColumnName="PH_DESC" />
+          <ScalarProperty Name="PH_ADDRESS" ColumnName="PH_ADDRESS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PD_PROVINCES">
+      <EntityTypeMapping TypeName="DemoModel.PD_PROVINCES">
+        <MappingFragment StoreEntitySet="PD_PROVINCES">
+          <ScalarProperty Name="PP_ID" ColumnName="PP_ID" />
+          <ScalarProperty Name="PP_Parent" ColumnName="PP_Parent" />
+          <ScalarProperty Name="PP_NAME" ColumnName="PP_NAME" />
+          <ScalarProperty Name="PP_ORDER" ColumnName="PP_ORDER" />
+          <ScalarProperty Name="PP_TAOBAO_CODE" ColumnName="PP_TAOBAO_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PD_TYPE">
+      <EntityTypeMapping TypeName="DemoModel.PD_TYPE">
+        <MappingFragment StoreEntitySet="PD_TYPE">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tid" ColumnName="Tid" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ImgName" ColumnName="ImgName" />
+          <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+          <ScalarProperty Name="ImgType" ColumnName="ImgType" />
+          <ScalarProperty Name="ImgSize" ColumnName="ImgSize" />
+          <ScalarProperty Name="ImgPic" ColumnName="ImgPic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_APPLICATION">
+      <EntityTypeMapping TypeName="DemoModel.SYS_APPLICATION">
+        <MappingFragment StoreEntitySet="SYS_APPLICATION">
+          <ScalarProperty Name="APP_ID" ColumnName="APP_ID" />
+          <ScalarProperty Name="APP_SHORT_NAME" ColumnName="APP_SHORT_NAME" />
+          <ScalarProperty Name="APP_NAME" ColumnName="APP_NAME" />
+          <ScalarProperty Name="APP_ORDER" ColumnName="APP_ORDER" />
+          <ScalarProperty Name="APP_AUTH_ADDRESS" ColumnName="APP_AUTH_ADDRESS" />
+          <ScalarProperty Name="APP_AUTH_CODE" ColumnName="APP_AUTH_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_FUNCTION">
+      <EntityTypeMapping TypeName="DemoModel.SYS_FUNCTION">
+        <MappingFragment StoreEntitySet="SYS_FUNCTION">
+          <ScalarProperty Name="FN_ID" ColumnName="FN_ID" />
+          <ScalarProperty Name="FN_APP_ID" ColumnName="FN_APP_ID" />
+          <ScalarProperty Name="FN_SHORT_NAME" ColumnName="FN_SHORT_NAME" />
+          <ScalarProperty Name="FN_NAME" ColumnName="FN_NAME" />
+          <ScalarProperty Name="FN_URL" ColumnName="FN_URL" />
+          <ScalarProperty Name="FN_PARENT_ID" ColumnName="FN_PARENT_ID" />
+          <ScalarProperty Name="FN_IS_LEAF" ColumnName="FN_IS_LEAF" />
+          <ScalarProperty Name="FN_TREE_LAYER" ColumnName="FN_TREE_LAYER" />
+          <ScalarProperty Name="FN_ORDER" ColumnName="FN_ORDER" />
+          <ScalarProperty Name="FN_REVERSE1" ColumnName="FN_REVERSE1" />
+          <ScalarProperty Name="FN_REVERSE2" ColumnName="FN_REVERSE2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_ORGANIZATION">
+      <EntityTypeMapping TypeName="DemoModel.SYS_ORGANIZATION">
+        <MappingFragment StoreEntitySet="SYS_ORGANIZATION">
+          <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+          <ScalarProperty Name="ORG_CITY" ColumnName="ORG_CITY" />
+          <ScalarProperty Name="ORG_LEVEL" ColumnName="ORG_LEVEL" />
+          <ScalarProperty Name="ORG_NAME" ColumnName="ORG_NAME" />
+          <ScalarProperty Name="ORG_CODE" ColumnName="ORG_CODE" />
+          <ScalarProperty Name="ORG_LAYER" ColumnName="ORG_LAYER" />
+          <ScalarProperty Name="ORG_PARENT_ID" ColumnName="ORG_PARENT_ID" />
+          <ScalarProperty Name="ORG_IS_LEAF" ColumnName="ORG_IS_LEAF" />
+          <ScalarProperty Name="ORG_MANAGER" ColumnName="ORG_MANAGER" />
+          <ScalarProperty Name="ORG_MANAGER_PHONE" ColumnName="ORG_MANAGER_PHONE" />
+          <ScalarProperty Name="ORG_ADDRESS" ColumnName="ORG_ADDRESS" />
+          <ScalarProperty Name="ORG_BILL_ADDRESS" ColumnName="ORG_BILL_ADDRESS" />
+          <ScalarProperty Name="ORG_POST_CODE" ColumnName="ORG_POST_CODE" />
+          <ScalarProperty Name="ORG_TELEPHONE" ColumnName="ORG_TELEPHONE" />
+          <ScalarProperty Name="ORG_UNITE" ColumnName="ORG_UNITE" />
+          <ScalarProperty Name="ORG_ACTIVE" ColumnName="ORG_ACTIVE" />
+          <ScalarProperty Name="ORG_NOTE" ColumnName="ORG_NOTE" />
+          <ScalarProperty Name="ORG_CREATE_ID" ColumnName="ORG_CREATE_ID" />
+          <ScalarProperty Name="ORG_CREATE_DATE" ColumnName="ORG_CREATE_DATE" />
+          <ScalarProperty Name="ORG_UPDATE_ID" ColumnName="ORG_UPDATE_ID" />
+          <ScalarProperty Name="ORG_UPDATE_DATE" ColumnName="ORG_UPDATE_DATE" />
+          <ScalarProperty Name="ORG_UNUSED1" ColumnName="ORG_UNUSED1" />
+          <ScalarProperty Name="ORG_UNUSED2" ColumnName="ORG_UNUSED2" />
+          <ScalarProperty Name="ORG_UNUSED3" ColumnName="ORG_UNUSED3" />
+          <ScalarProperty Name="ORG_UNUSED4" ColumnName="ORG_UNUSED4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_PART_APP">
+      <EntityTypeMapping TypeName="DemoModel.SYS_PART_APP">
+        <MappingFragment StoreEntitySet="SYS_PART_APP">
+          <ScalarProperty Name="PA_APP_ID" ColumnName="PA_APP_ID" />
+          <ScalarProperty Name="PA_PART_ID" ColumnName="PA_PART_ID" />
+          <ScalarProperty Name="PA_IS_FUNC" ColumnName="PA_IS_FUNC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_PART_FUNC">
+      <EntityTypeMapping TypeName="DemoModel.SYS_PART_FUNC">
+        <MappingFragment StoreEntitySet="SYS_PART_FUNC">
+          <ScalarProperty Name="PF_PART_ID" ColumnName="PF_PART_ID" />
+          <ScalarProperty Name="PF_FN_ID" ColumnName="PF_FN_ID" />
+          <ScalarProperty Name="PF_IS_FUNC" ColumnName="PF_IS_FUNC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_PART_SUB_FUNC">
+      <EntityTypeMapping TypeName="DemoModel.SYS_PART_SUB_FUNC">
+        <MappingFragment StoreEntitySet="SYS_PART_SUB_FUNC">
+          <ScalarProperty Name="PSF_PART_ID" ColumnName="PSF_PART_ID" />
+          <ScalarProperty Name="PSF_SF_ID" ColumnName="PSF_SF_ID" />
+          <ScalarProperty Name="PSF_IS_FUNC" ColumnName="PSF_IS_FUNC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_SUB_FUNC">
+      <EntityTypeMapping TypeName="DemoModel.SYS_SUB_FUNC">
+        <MappingFragment StoreEntitySet="SYS_SUB_FUNC">
+          <ScalarProperty Name="SF_ID" ColumnName="SF_ID" />
+          <ScalarProperty Name="SF_FN_ID" ColumnName="SF_FN_ID" />
+          <ScalarProperty Name="SF_NAME" ColumnName="SF_NAME" />
+          <ScalarProperty Name="SF_NAME_ID" ColumnName="SF_NAME_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UR_PART">
+      <EntityTypeMapping TypeName="DemoModel.UR_PART">
+        <MappingFragment StoreEntitySet="UR_PART">
+          <ScalarProperty Name="PART_ID" ColumnName="PART_ID" />
+          <ScalarProperty Name="PART_NAME" ColumnName="PART_NAME" />
+          <ScalarProperty Name="PART_DESC" ColumnName="PART_DESC" />
+          <ScalarProperty Name="PART_CHAR" ColumnName="PART_CHAR" />
+          <ScalarProperty Name="PART_OWNER" ColumnName="PART_OWNER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UR_USERS">
+      <EntityTypeMapping TypeName="DemoModel.UR_USERS">
+        <MappingFragment StoreEntitySet="UR_USERS">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_ORG_ID" ColumnName="USER_ORG_ID" />
+          <ScalarProperty Name="USER_LOGIN_NAME" ColumnName="USER_LOGIN_NAME" />
+          <ScalarProperty Name="USER_LOGIN_PASSWD" ColumnName="USER_LOGIN_PASSWD" />
+          <ScalarProperty Name="USER_LOGIN_DATE" ColumnName="USER_LOGIN_DATE" />
+          <ScalarProperty Name="USER_PHONE" ColumnName="USER_PHONE" />
+          <ScalarProperty Name="USER_MOBILE" ColumnName="USER_MOBILE" />
+          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+          <ScalarProperty Name="USER_WORK_NO" ColumnName="USER_WORK_NO" />
+          <ScalarProperty Name="USER_SEX" ColumnName="USER_SEX" />
+          <ScalarProperty Name="USER_BIRTHDAY" ColumnName="USER_BIRTHDAY" />
+          <ScalarProperty Name="USER_WORKED" ColumnName="USER_WORKED" />
+          <ScalarProperty Name="USER_EDUCATION" ColumnName="USER_EDUCATION" />
+          <ScalarProperty Name="USER_ORIGIN" ColumnName="USER_ORIGIN" />
+          <ScalarProperty Name="USER_TITLE" ColumnName="USER_TITLE" />
+          <ScalarProperty Name="USER_WORK_LIMIT" ColumnName="USER_WORK_LIMIT" />
+          <ScalarProperty Name="USER_IDENT_NO" ColumnName="USER_IDENT_NO" />
+          <ScalarProperty Name="USER_IN_DATE" ColumnName="USER_IN_DATE" />
+          <ScalarProperty Name="USER_AREA" ColumnName="USER_AREA" />
+          <ScalarProperty Name="USER_ADDRESS" ColumnName="USER_ADDRESS" />
+          <ScalarProperty Name="USER_POSTAL" ColumnName="USER_POSTAL" />
+          <ScalarProperty Name="USER_ACTIVE" ColumnName="USER_ACTIVE" />
+          <ScalarProperty Name="USER_OUT" ColumnName="USER_OUT" />
+          <ScalarProperty Name="USER_OUT_DATE" ColumnName="USER_OUT_DATE" />
+          <ScalarProperty Name="USER_NOTE" ColumnName="USER_NOTE" />
+          <ScalarProperty Name="USER_CREATE_ID" ColumnName="USER_CREATE_ID" />
+          <ScalarProperty Name="USER_CREATE_DATE" ColumnName="USER_CREATE_DATE" />
+          <ScalarProperty Name="USER_UPDATE_ID" ColumnName="USER_UPDATE_ID" />
+          <ScalarProperty Name="USER_UPDATE_DATE" ColumnName="USER_UPDATE_DATE" />
+          <ScalarProperty Name="USER_PASSWD_CHANGE_DATE" ColumnName="USER_PASSWD_CHANGE_DATE" />
+          <ScalarProperty Name="USER_UNLOCK_DATE" ColumnName="USER_UNLOCK_DATE" />
+          <ScalarProperty Name="USER_ADMIN" ColumnName="USER_ADMIN" />
+          <ScalarProperty Name="USER_UNUSED1" ColumnName="USER_UNUSED1" />
+          <ScalarProperty Name="USER_UNUSED2" ColumnName="USER_UNUSED2" />
+          <ScalarProperty Name="USER_UNUSED3" ColumnName="USER_UNUSED3" />
+          <ScalarProperty Name="USER_UNUSED4" ColumnName="USER_UNUSED4" />
+          <ScalarProperty Name="USER_CHANNEL_ID" ColumnName="USER_CHANNEL_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UR_USERS_PART">
+      <EntityTypeMapping TypeName="DemoModel.UR_USERS_PART">
+        <MappingFragment StoreEntitySet="UR_USERS_PART">
+          <ScalarProperty Name="UP_USER_ID" ColumnName="UP_USER_ID" />
+          <ScalarProperty Name="UP_PART_ID" ColumnName="UP_PART_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_Advertising">
+      <EntityTypeMapping TypeName="DemoModel.YR_Advertising">
+        <MappingFragment StoreEntitySet="YR_Advertising">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AdvName" ColumnName="AdvName" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="AdvType" ColumnName="AdvType" />
+          <ScalarProperty Name="AdvMemo" ColumnName="AdvMemo" />
+          <ScalarProperty Name="AdvRemark" ColumnName="AdvRemark" />
+          <ScalarProperty Name="ImgName" ColumnName="ImgName" />
+          <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+          <ScalarProperty Name="ImgType" ColumnName="ImgType" />
+          <ScalarProperty Name="ImgSize" ColumnName="ImgSize" />
+          <ScalarProperty Name="ImgPic" ColumnName="ImgPic" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CREATE_ID" ColumnName="CREATE_ID" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="UPDATE_ID" ColumnName="UPDATE_ID" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_ApiLog">
+      <EntityTypeMapping TypeName="DemoModel.YR_ApiLog">
+        <MappingFragment StoreEntitySet="YR_ApiLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="PostDate" ColumnName="PostDate" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_Card">
+      <EntityTypeMapping TypeName="DemoModel.YR_Card">
+        <MappingFragment StoreEntitySet="YR_Card">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsTrue" ColumnName="IsTrue" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="CardBank" ColumnName="CardBank" />
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="CardDate" ColumnName="CardDate" />
+          <ScalarProperty Name="CardExpired" ColumnName="CardExpired" />
+          <ScalarProperty Name="CVV2" ColumnName="CVV2" />
+          <ScalarProperty Name="CardPhone" ColumnName="CardPhone" />
+          <ScalarProperty Name="CardName" ColumnName="CardName" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CardLen" ColumnName="CardLen" />
+          <ScalarProperty Name="LOGO" ColumnName="LOGO" />
+          <ScalarProperty Name="BankTel" ColumnName="BankTel" />
+          <ScalarProperty Name="BankWebsite" ColumnName="BankWebsite" />
+          <ScalarProperty Name="IsCorrect" ColumnName="IsCorrect" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_Id" ColumnName="Create_Id" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="CardImg" ColumnName="CardImg" />
+          <ScalarProperty Name="CardImg2" ColumnName="CardImg2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_FeedBack">
+      <EntityTypeMapping TypeName="DemoModel.YR_FeedBack">
+        <MappingFragment StoreEntitySet="YR_FeedBack">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateId" ColumnName="CreateId" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+          <ScalarProperty Name="ReplyDate" ColumnName="ReplyDate" />
+          <ScalarProperty Name="ReplyId" ColumnName="ReplyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_Finance">
+      <EntityTypeMapping TypeName="DemoModel.YR_Finance">
+        <MappingFragment StoreEntitySet="YR_Finance">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UseMoney" ColumnName="UseMoney" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Remcount" ColumnName="Remcount" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProType" ColumnName="ProType" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_Message">
+      <EntityTypeMapping TypeName="DemoModel.YR_Message">
+        <MappingFragment StoreEntitySet="YR_Message">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ToUserId" ColumnName="ToUserId" />
+          <ScalarProperty Name="SysadminId" ColumnName="SysadminId" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsTiming" ColumnName="IsTiming" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Alert" ColumnName="Alert" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_Order">
+      <EntityTypeMapping TypeName="DemoModel.YR_Order">
+        <MappingFragment StoreEntitySet="YR_Order">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="TradeNo" ColumnName="TradeNo" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PayCardId" ColumnName="PayCardId" />
+          <ScalarProperty Name="PayCardNo" ColumnName="PayCardNo" />
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="UseMoney" ColumnName="UseMoney" />
+          <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CheckStatus" ColumnName="CheckStatus" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="CheckId" ColumnName="CheckId" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_Id" ColumnName="Create_Id" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_Id" ColumnName="Update_Id" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_SMS">
+      <EntityTypeMapping TypeName="DemoModel.YR_SMS">
+        <MappingFragment StoreEntitySet="YR_SMS">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="iMessage" ColumnName="iMessage" />
+          <ScalarProperty Name="Verification" ColumnName="Verification" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_UpgradeLog">
+      <EntityTypeMapping TypeName="DemoModel.YR_UpgradeLog">
+        <MappingFragment StoreEntitySet="YR_UpgradeLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateId" ColumnName="CreateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_User">
+      <EntityTypeMapping TypeName="DemoModel.YR_User">
+        <MappingFragment StoreEntitySet="YR_User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TrueName" ColumnName="TrueName" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="QQ" ColumnName="QQ" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="ReToken" ColumnName="ReToken" />
+          <ScalarProperty Name="Create_date" ColumnName="Create_date" />
+          <ScalarProperty Name="Update_date" ColumnName="Update_date" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Moblie" ColumnName="Moblie" />
+          <ScalarProperty Name="CardNum" ColumnName="CardNum" />
+          <ScalarProperty Name="IsTrueMoblie" ColumnName="IsTrueMoblie" />
+          <ScalarProperty Name="IsTrueCard" ColumnName="IsTrueCard" />
+          <ScalarProperty Name="IsTrueEmail" ColumnName="IsTrueEmail" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="CloudToken" ColumnName="CloudToken" />
+          <ScalarProperty Name="Weixin" ColumnName="Weixin" />
+          <ScalarProperty Name="Alipay" ColumnName="Alipay" />
+          <ScalarProperty Name="MyMoney" ColumnName="MyMoney" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="ImgName" ColumnName="ImgName" />
+          <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+          <ScalarProperty Name="ImgType" ColumnName="ImgType" />
+          <ScalarProperty Name="ImgSize" ColumnName="ImgSize" />
+          <ScalarProperty Name="ImgPic" ColumnName="ImgPic" />
+          <ScalarProperty Name="FrozenMoney" ColumnName="FrozenMoney" />
+          <ScalarProperty Name="GetMoeny" ColumnName="GetMoeny" />
+          <ScalarProperty Name="GetNum" ColumnName="GetNum" />
+          <ScalarProperty Name="CostMoney" ColumnName="CostMoney" />
+          <ScalarProperty Name="CostNum" ColumnName="CostNum" />
+          <ScalarProperty Name="TuiJian" ColumnName="TuiJian" />
+          <ScalarProperty Name="UserLevel" ColumnName="UserLevel" />
+          <ScalarProperty Name="FeiLv" ColumnName="FeiLv" />
+          <ScalarProperty Name="IsDaiLi" ColumnName="IsDaiLi" />
+          <ScalarProperty Name="IsEpay" ColumnName="IsEpay" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Idcard" ColumnName="Idcard" />
+          <ScalarProperty Name="Idcard2" ColumnName="Idcard2" />
+          <ScalarProperty Name="HeadIdcard" ColumnName="HeadIdcard" />
+          <ScalarProperty Name="BankCard" ColumnName="BankCard" />
+          <ScalarProperty Name="BankCard2" ColumnName="BankCard2" />
+          <ScalarProperty Name="CheckId" ColumnName="CheckId" />
+          <ScalarProperty Name="CheckMemo" ColumnName="CheckMemo" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_UserLevel">
+      <EntityTypeMapping TypeName="DemoModel.YR_UserLevel">
+        <MappingFragment StoreEntitySet="YR_UserLevel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FeiLv" ColumnName="FeiLv" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YR_Versions">
+      <EntityTypeMapping TypeName="DemoModel.YR_Versions">
+        <MappingFragment StoreEntitySet="YR_Versions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Patch" ColumnName="Patch" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ApkSize" ColumnName="ApkSize" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="PatchUrl" ColumnName="PatchUrl" />
+          <ScalarProperty Name="IsDebug" ColumnName="IsDebug" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

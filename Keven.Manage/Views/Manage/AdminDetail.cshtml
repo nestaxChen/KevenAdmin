@@ -1,0 +1,113 @@
+﻿@model Keven.Model.UR_USERS
+@{
+    ViewBag.Title = "AdminDetail";
+    ViewBag.Sidebar = 10;
+
+}
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            资料详细
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="#">系统设置</a></li>
+            <li class="active">
+                用户信息
+            </li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">
+                            用户信息
+                        </h3>
+                    </div><!-- /.box-header -->
+                    @if (ViewBag.Success != null)
+                    {
+                        <div class="box-body">
+                            <div class="alert alert-success alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4>	<i class="icon fa fa-check"></i> 提示!</h4>
+                                @ViewBag.Message
+                            </div>
+                        </div>
+
+                    }
+
+                        <div class="box-body" style="display: block;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <td width="10%">
+                                                <b>用户姓名</b>
+                                            </td>
+                                            <td width="23%">
+                                                @Model.USER_NAME
+                                            </td>
+                                            <td width="10%"><b>所属机构</b></td>
+                                            <td width="23%">
+                                                @Model.USER_ORG_ID
+                                            </td>
+                                            <td width="10%"><b>登录名</b></td>
+                                            <td width="23%">
+                                                @Model.USER_LOGIN_NAME
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>联系电话</b></td>
+                                            <td>@Model.USER_PHONE</td>
+                                            <td><b>手机</b></td>
+                                            <td>@Model.USER_MOBILE</td>
+                                            <td><b>邮箱</b></td>
+                                            <td>@Model.USER_EMAIL</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>工号</b></td>
+                                            <td>@Model.USER_WORK_NO</td>
+                                            <td><b>性别</b></td>
+                                            <td>@Model.USER_SEX</td>
+                                            <td><b>职位</b></td>
+                                            <td>@Model.USER_TITLE</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>有效用户</b></td>
+                                            <td>@Model.USER_ACTIVE</td>
+                                            <td><b>超级用户</b></td>
+                                            <td>@Model.USER_ADMIN</td>
+                                            <td><b>创建日期</b></td>
+                                            <td>@Model.USER_CREATE_DATE</td>
+                                        </tr>
+                                    </table>
+                                    <div class="form-group">
+                                        <!--隐藏-->
+                                        @Html.HiddenFor(t => t.USER_ID)
+                                    </div>
+                                    <div class="box-footer">
+                                        <div class="pull-right">
+                                            <a href="~/Manage/AdminEdit" class="btn btn-primary">修改</a>
+                                            <a href="~/Manage/AdminPwd" class="btn btn-info">修改密码</a>
+                                            <button class="btn btn-default">取消</button>
+                                        </div>
+                                    </div>
+
+
+                                </div><!-- /.col -->
+                            </div><!-- /.row -->
+                        </div><!-- /.box-body -->
+                </div><!-- /.box -->
+                </div><!-- /.col -->
+        </div><!-- /.row -->
+    </section><!-- /.content -->
+</div>
+
+

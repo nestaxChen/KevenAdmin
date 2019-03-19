@@ -1,0 +1,157 @@
+﻿@model List<Keven.Model.TT_Trademark_Applyer>
+
+@{
+    ViewBag.Title = "申请人管理";
+    ViewBag.Sidebar = 210;
+
+    int PageIndex = ViewBag.PageIndex;
+    int PageCount = ViewBag.PageCount;
+    int Total = ViewBag.Total;
+
+    Dictionary<int, string> allNationality = ViewBag.DicNationality as Dictionary<int, string>;
+    Dictionary<int, string> allType = ViewBag.DicType as Dictionary<int, string>;
+
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            申请人管理
+            @*<small>advanced tables</small>*@
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#"><i class="fa fa-dashboard"></i> 首页</a>
+            </li>
+            <li>
+                <a href="#">商标业务</a>
+            </li>
+            <li class="active">列表</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">列表</h3>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="form-group">
+                            <form action="~/Trademark/ApplyerList" method="get">
+                                关键字：<input type="text" name="keyword" value="@ViewBag.Keyword" placeholder="模板名或申请人名" />
+                                用户ID：<input type="text" name="userId" value="@ViewBag.userId" placeholder="用户ID" />
+                                客服：<input type="text" name="kefuId" value="@ViewBag.kefuId" placeholder="模板名或申请人名" />
+                                状态：<select name="status">
+                                    <option value="">请选择</option>
+                                    <option value="待审核">待审核</option>
+                                    <option value="审核通过">审核通过</option>
+                                    <option value="审核不通过">审核不通过</option>
+                                </select>
+                                类型：<select name="nationality">
+                                    <option value="">请选择</option>
+                                    @foreach (var t in allNationality)
+                                    {
+                                        <option value="@t.Key">@t.Value</option>
+
+                                    }
+                                </select>
+                                <select name="type">
+                                    <option value="">请选择</option>
+                                    @foreach (var t in allType)
+                                    {
+                                        <option value="@t.Key">@t.Value</option>
+                                    }
+                                </select>
+                                <br />
+                                提交时间：<input type="text" name="begin" id="txtBegin" value="@ViewBag.Begin" placeholder="开始时间" />-
+                                <input type="text" name="end" id="txtEnd" value="@ViewBag.End" placeholder="结束时间" />
+
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-search"></i> 查询</button>
+                            </form>
+                            @*<a class="btn pull-right btn-success" href="~/Trademark/ApplyerEdit"><i class="fa fa-fw fa-plus"></i> 新建</a>*@
+                        </div>
+
+                        <table id="example1" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>父级</th>
+                                    <th>名称</th>
+                                    <th>排序</th>
+                                    <th width="150px;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var t in Model)
+                                {
+                                    <tr>
+                                        <td>@t.Id</td>
+                                        <td>
+                                            @t.TemplateName
+                                        </td>
+                                        <td>@t.Name</td>
+                                        <td>@t.Address</td>
+                                        <td>
+                                            <a class="btn-sm btn-info" href="~/Trademark/ApplyerEdit/@t.Id">修改</a>
+                                            @*<a class="btn-sm btn-danger" href="#" onclick="AreaDel(@t.Id)">删除</a>*@
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        @if (Total > Model.Count)
+                        {
+                            <div style="text-align:right; width:initial">
+                                @Html.PageBar("", "{page}", PageIndex, PageCount, Total)
+                            </div>
+                        }
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </section><!-- /.content -->
+</div>
+
+<link rel="stylesheet" href="~/Content/plugins/datepicker/datepicker3.css" />
+<script src="~/Content/plugins/datepicker/bootstrap-datepicker.js"></script>
+
+<script type="text/javascript">
+    //function AdminDel(id) {
+    //    $.myConfirm({
+    //        title: '确定删除吗？', message: '删除后不可恢复！', callback: function () {
+    //            $.ajax({
+    //                url: '/Manage/AdminDel?t=' + Math.random(),
+    //                method: 'POST',
+    //                data: { id: id },
+    //                dataType: 'json',
+    //                beforeSend: function () {
+    //                },
+    //                complete: function () {
+    //                },
+    //                success: function (data) {
+    //                    if (data.status_code == "0") {
+    //                        $.myAlert({
+    //                            title: '提示', message: data.message, callback: function () {
+    //                                window.location.reload();
+    //                            }
+    //                        });
+    //                    }
+    //                },
+    //                error: function () {
+    //                }
+    //            });
+    //        }
+    //    })
+    //}
+
+    $('#txtBegin').datepicker({format:"yyyy-mm-dd"});
+    $('#txtEnd').datepicker({ format: "yyyy-mm-dd" });
+
+
+</script>
+
+

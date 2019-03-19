@@ -1,0 +1,10 @@
+C:\Project\Keven.TT\Keven.Common\bin\Release\Keven.Common.dll
+C:\Project\Keven.TT\Keven.Common\bin\Release\Keven.Common.pdb
+C:\Project\Keven.TT\Keven.Common\bin\Release\log4net.dll
+C:\Project\Keven.TT\Keven.Common\bin\Release\Newtonsoft.Json.dll
+C:\Project\Keven.TT\Keven.Common\bin\Release\log4net.xml
+C:\Project\Keven.TT\Keven.Common\bin\Release\Newtonsoft.Json.xml
+C:\Project\Keven.TT\Keven.Common\obj\Release\Keven.Common.csprojResolveAssemblyReference.cache
+C:\Project\Keven.TT\Keven.Common\obj\Release\Keven.Common.csproj.CoreCompileInputs.cache
+C:\Project\Keven.TT\Keven.Common\obj\Release\Keven.Common.dll
+C:\Project\Keven.TT\Keven.Common\obj\Release\Keven.Common.pdb

@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="~/Content/Plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/Content/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/Content/plugins/datatables/dataTables.bootstrap.css">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/Content/plugins/select2/select2.min.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/Css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="~/Content/Css/skins/_all-skins.min.css">
+
+    <link rel="stylesheet" href="~/Content/Css/Pagebar.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/Content/plugins/select2/select2.min.css">
+
+
+    <!-- jQuery 2.1.4 -->
+    <script src="~/Content/Scripts/jquery-2.1.4.min.js"></script>
+
+    <!-- layer 弹窗 -->
+    <script src="~/Content/Plugins/layer/layer.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="/Content/Scripts/html5shiv.min.js"></script>
+        <script src="/Content/Scripts/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="~/Home/" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>KA</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>KA</b>后台管理系统</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu">
+                            <a href="~/Home/" title="系统首页">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        <!-- Notifications: style can be found in dropdown.less -->
+                        <li class="dropdown notifications-menu">
+                            <a href="javascript:history.back();" title="后退"><i class="fa fa-backward"></i></a>
+                        </li>
+                        <!-- Tasks: style can be found in dropdown.less -->
+                        <li class="dropdown tasks-menu">
+                            <a href="~/Manage/AdminDetail" title="个人管理">
+                                <i class="fa fa-user"></i>
+                            </a>
+                        </li>
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                @*<img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">*@
+                                <span class="hidden-xs">@Keven.Manage.Models.BaseModels.GetUserName() 您好！</span>
+                            </a>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" onclick="Quit();return false;" title="退出系统"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!--左侧导航-->
+        @Html.Partial("_Sidebar")
+
+        <!-- Content Wrapper. Contains page content -->
+        @RenderBody()
+
+        <!-- /.content-wrapper -->
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.3.0
+            </div>
+            <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+        </footer>
+    </div><!-- ./wrapper -->
+    <!-- Bootstrap 3.3.5 -->
+    <script src="~/Content/Plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="~/Content/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="~/Content/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Content/plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content/Scripts/app.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    @*<script src="~/Content/Scripts/demo.js"></script>*@
+
+    <!-- Select2 -->
+    <script src="~/Content/plugins/select2/select2.full.min.js"></script>
+
+
+    <script type="text/javascript">
+
+
+        function Quit() {
+            $.myConfirm({
+                title: '退出？', message: '确认退出本系统！', callback: function () {
+                    $.ajax({
+                        url: '/Login/Quit?t=' + Math.random(),
+                        method: 'POST',
+                        dataType: 'json',
+                        beforeSend: function () {
+                        },
+                        complete: function () {
+                        },
+                        success: function (data) {
+                            if (data.status_code == "0") {
+                                window.location.href = "/Login/";
+                            }
+                        },
+                        error: function () {
+
+                        }
+                    });
+                }
+            })
+        }
+
+    </script>
+
+</body>
+</html>

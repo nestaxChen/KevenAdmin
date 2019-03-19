@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KTModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="PD_Areas">
+      <EntityTypeMapping TypeName="KTModel.PD_Areas">
+        <MappingFragment StoreEntitySet="PD_Areas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PD_BASETYPE">
+      <EntityTypeMapping TypeName="KTModel.PD_BASETYPE">
+        <MappingFragment StoreEntitySet="PD_BASETYPE">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PD_TYPE">
+      <EntityTypeMapping TypeName="KTModel.PD_TYPE">
+        <MappingFragment StoreEntitySet="PD_TYPE">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tid" ColumnName="Tid" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ImgName" ColumnName="ImgName" />
+          <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+          <ScalarProperty Name="ImgType" ColumnName="ImgType" />
+          <ScalarProperty Name="ImgSize" ColumnName="ImgSize" />
+          <ScalarProperty Name="ImgPic" ColumnName="ImgPic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_FUNCTION">
+      <EntityTypeMapping TypeName="KTModel.SYS_FUNCTION">
+        <MappingFragment StoreEntitySet="SYS_FUNCTION">
+          <ScalarProperty Name="FN_ID" ColumnName="FN_ID" />
+          <ScalarProperty Name="FN_APP_ID" ColumnName="FN_APP_ID" />
+          <ScalarProperty Name="FN_SHORT_NAME" ColumnName="FN_SHORT_NAME" />
+          <ScalarProperty Name="FN_NAME" ColumnName="FN_NAME" />
+          <ScalarProperty Name="FN_URL" ColumnName="FN_URL" />
+          <ScalarProperty Name="FN_PARENT_ID" ColumnName="FN_PARENT_ID" />
+          <ScalarProperty Name="FN_IS_LEAF" ColumnName="FN_IS_LEAF" />
+          <ScalarProperty Name="FN_TREE_LAYER" ColumnName="FN_TREE_LAYER" />
+          <ScalarProperty Name="FN_ORDER" ColumnName="FN_ORDER" />
+          <ScalarProperty Name="FN_REVERSE1" ColumnName="FN_REVERSE1" />
+          <ScalarProperty Name="FN_REVERSE2" ColumnName="FN_REVERSE2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_ORGANIZATION">
+      <EntityTypeMapping TypeName="KTModel.SYS_ORGANIZATION">
+        <MappingFragment StoreEntitySet="SYS_ORGANIZATION">
+          <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+          <ScalarProperty Name="ORG_CITY" ColumnName="ORG_CITY" />
+          <ScalarProperty Name="ORG_LEVEL" ColumnName="ORG_LEVEL" />
+          <ScalarProperty Name="ORG_NAME" ColumnName="ORG_NAME" />
+          <ScalarProperty Name="ORG_CODE" ColumnName="ORG_CODE" />
+          <ScalarProperty Name="ORG_LAYER" ColumnName="ORG_LAYER" />
+          <ScalarProperty Name="ORG_PARENT_ID" ColumnName="ORG_PARENT_ID" />
+          <ScalarProperty Name="ORG_IS_LEAF" ColumnName="ORG_IS_LEAF" />
+          <ScalarProperty Name="ORG_MANAGER" ColumnName="ORG_MANAGER" />
+          <ScalarProperty Name="ORG_MANAGER_PHONE" ColumnName="ORG_MANAGER_PHONE" />
+          <ScalarProperty Name="ORG_ADDRESS" ColumnName="ORG_ADDRESS" />
+          <ScalarProperty Name="ORG_BILL_ADDRESS" ColumnName="ORG_BILL_ADDRESS" />
+          <ScalarProperty Name="ORG_POST_CODE" ColumnName="ORG_POST_CODE" />
+          <ScalarProperty Name="ORG_TELEPHONE" ColumnName="ORG_TELEPHONE" />
+          <ScalarProperty Name="ORG_UNITE" ColumnName="ORG_UNITE" />
+          <ScalarProperty Name="ORG_ACTIVE" ColumnName="ORG_ACTIVE" />
+          <ScalarProperty Name="ORG_NOTE" ColumnName="ORG_NOTE" />
+          <ScalarProperty Name="ORG_CREATE_ID" ColumnName="ORG_CREATE_ID" />
+          <ScalarProperty Name="ORG_CREATE_DATE" ColumnName="ORG_CREATE_DATE" />
+          <ScalarProperty Name="ORG_UPDATE_ID" ColumnName="ORG_UPDATE_ID" />
+          <ScalarProperty Name="ORG_UPDATE_DATE" ColumnName="ORG_UPDATE_DATE" />
+          <ScalarProperty Name="ORG_UNUSED1" ColumnName="ORG_UNUSED1" />
+          <ScalarProperty Name="ORG_UNUSED2" ColumnName="ORG_UNUSED2" />
+          <ScalarProperty Name="ORG_UNUSED3" ColumnName="ORG_UNUSED3" />
+          <ScalarProperty Name="ORG_UNUSED4" ColumnName="ORG_UNUSED4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_PART_FUNC">
+      <EntityTypeMapping TypeName="KTModel.SYS_PART_FUNC">
+        <MappingFragment StoreEntitySet="SYS_PART_FUNC">
+          <ScalarProperty Name="PF_PART_ID" ColumnName="PF_PART_ID" />
+          <ScalarProperty Name="PF_FN_ID" ColumnName="PF_FN_ID" />
+          <ScalarProperty Name="PF_IS_FUNC" ColumnName="PF_IS_FUNC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_Advertising">
+      <EntityTypeMapping TypeName="KTModel.TT_Advertising">
+        <MappingFragment StoreEntitySet="TT_Advertising">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AdvName" ColumnName="AdvName" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="AdvType" ColumnName="AdvType" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateId" ColumnName="CreateId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateId" ColumnName="UpdateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_ApiLog">
+      <EntityTypeMapping TypeName="KTModel.TT_ApiLog">
+        <MappingFragment StoreEntitySet="TT_ApiLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="名称" ColumnName="名称" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="PostData" ColumnName="PostData" />
+          <ScalarProperty Name="返回信息" ColumnName="返回信息" />
+          <ScalarProperty Name="PostDate" ColumnName="PostDate" />
+          <ScalarProperty Name="备注" ColumnName="备注" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Host" ColumnName="Host" />
+          <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_Finance">
+      <EntityTypeMapping TypeName="KTModel.TT_Finance">
+        <MappingFragment StoreEntitySet="TT_Finance">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UseMoney" ColumnName="UseMoney" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CoinMoney" ColumnName="CoinMoney" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProType" ColumnName="ProType" />
+          <ScalarProperty Name="IsBack" ColumnName="IsBack" />
+          <ScalarProperty Name="BackUserId" ColumnName="BackUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_Kefu">
+      <EntityTypeMapping TypeName="KTModel.TT_Kefu">
+        <MappingFragment StoreEntitySet="TT_Kefu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RealName" ColumnName="RealName" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="QQ" ColumnName="QQ" />
+          <ScalarProperty Name="Weixin" ColumnName="Weixin" />
+          <ScalarProperty Name="WeixinUrl" ColumnName="WeixinUrl" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="IsChecked" ColumnName="IsChecked" />
+          <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+          <ScalarProperty Name="WorkYear" ColumnName="WorkYear" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateId" ColumnName="CreateId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateId" ColumnName="UpdateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_Message">
+      <EntityTypeMapping TypeName="KTModel.TT_Message">
+        <MappingFragment StoreEntitySet="TT_Message">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ToUserId" ColumnName="ToUserId" />
+          <ScalarProperty Name="IsSystem" ColumnName="IsSystem" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsAlert" ColumnName="IsAlert" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_Sms">
+      <EntityTypeMapping TypeName="KTModel.TT_Sms">
+        <MappingFragment StoreEntitySet="TT_Sms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SmsType" ColumnName="SmsType" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Verification" ColumnName="Verification" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_StateLog">
+      <EntityTypeMapping TypeName="KTModel.TT_StateLog">
+        <MappingFragment StoreEntitySet="TT_StateLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Host" ColumnName="Host" />
+          <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_Trademark">
+      <EntityTypeMapping TypeName="KTModel.TT_Trademark">
+        <MappingFragment StoreEntitySet="TT_Trademark">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="KefuId" ColumnName="KefuId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cls" ColumnName="Cls" />
+          <ScalarProperty Name="Explanation" ColumnName="Explanation" />
+          <ScalarProperty Name="ApplyerId" ColumnName="ApplyerId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="ApplyNumber" ColumnName="ApplyNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DelegationFile" ColumnName="DelegationFile" />
+          <ScalarProperty Name="GoodsNameArray" ColumnName="GoodsNameArray" />
+          <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
+          <ScalarProperty Name="ImageFile2" ColumnName="ImageFile2" />
+          <ScalarProperty Name="IsColor" ColumnName="IsColor" />
+          <ScalarProperty Name="Auditor" ColumnName="Auditor" />
+          <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+          <ScalarProperty Name="AuditMemo" ColumnName="AuditMemo" />
+          <ScalarProperty Name="SubmitToRegistration" ColumnName="SubmitToRegistration" />
+          <ScalarProperty Name="IsPay" ColumnName="IsPay" />
+          <ScalarProperty Name="GoodNum" ColumnName="GoodNum" />
+          <ScalarProperty Name="OfficialMoney" ColumnName="OfficialMoney" />
+          <ScalarProperty Name="ServiceMoney" ColumnName="ServiceMoney" />
+          <ScalarProperty Name="AnalysisFile" ColumnName="AnalysisFile" />
+          <ScalarProperty Name="提交公司" ColumnName="提交公司" />
+          <ScalarProperty Name="IsCheck" ColumnName="IsCheck" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_Trademark_Applyer">
+      <EntityTypeMapping TypeName="KTModel.TT_Trademark_Applyer">
+        <MappingFragment StoreEntitySet="TT_Trademark_Applyer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="CerificateType" ColumnName="CerificateType" />
+          <ScalarProperty Name="CerificateNumber" ColumnName="CerificateNumber" />
+          <ScalarProperty Name="CerificateFile" ColumnName="CerificateFile" />
+          <ScalarProperty Name="CerificateFile2" ColumnName="CerificateFile2" />
+          <ScalarProperty Name="CerificateDate" ColumnName="CerificateDate" />
+          <ScalarProperty Name="BusinessNumber" ColumnName="BusinessNumber" />
+          <ScalarProperty Name="BusinessFile" ColumnName="BusinessFile" />
+          <ScalarProperty Name="BusinessFileEn" ColumnName="BusinessFileEn" />
+          <ScalarProperty Name="BusinessDate" ColumnName="BusinessDate" />
+          <ScalarProperty Name="DelegationFile" ColumnName="DelegationFile" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="AddressEn" ColumnName="AddressEn" />
+          <ScalarProperty Name="ReceiveName" ColumnName="ReceiveName" />
+          <ScalarProperty Name="ReceivePhone" ColumnName="ReceivePhone" />
+          <ScalarProperty Name="ReceiveAddress" ColumnName="ReceiveAddress" />
+          <ScalarProperty Name="ReceivePostcode" ColumnName="ReceivePostcode" />
+          <ScalarProperty Name="ReceiveFax" ColumnName="ReceiveFax" />
+          <ScalarProperty Name="ReceiveEmail" ColumnName="ReceiveEmail" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Auditor" ColumnName="Auditor" />
+          <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+          <ScalarProperty Name="AuditMemo" ColumnName="AuditMemo" />
+          <ScalarProperty Name="IsPrivacy" ColumnName="IsPrivacy" />
+          <ScalarProperty Name="KefuId" ColumnName="KefuId" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_Trademark_Class">
+      <EntityTypeMapping TypeName="KTModel.TT_Trademark_Class">
+        <MappingFragment StoreEntitySet="TT_Trademark_Class">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="ParentClass" ColumnName="ParentClass" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="AliasName" ColumnName="AliasName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_Trademark_Files">
+      <EntityTypeMapping TypeName="KTModel.TT_Trademark_Files">
+        <MappingFragment StoreEntitySet="TT_Trademark_Files">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="TmName" ColumnName="TmName" />
+          <ScalarProperty Name="TmCls" ColumnName="TmCls" />
+          <ScalarProperty Name="ApplyerId" ColumnName="ApplyerId" />
+          <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
+          <ScalarProperty Name="ApplyNumber" ColumnName="ApplyNumber" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Business" ColumnName="Business" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="IsPost" ColumnName="IsPost" />
+          <ScalarProperty Name="PostNo" ColumnName="PostNo" />
+          <ScalarProperty Name="PostDate" ColumnName="PostDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT_User">
+      <EntityTypeMapping TypeName="KTModel.TT_User">
+        <MappingFragment StoreEntitySet="TT_User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+          <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+          <ScalarProperty Name="RealName" ColumnName="RealName" />
+          <ScalarProperty Name="HeadPhoto" ColumnName="HeadPhoto" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="QQ" ColumnName="QQ" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Weixin" ColumnName="Weixin" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Retoken" ColumnName="Retoken" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Idcard" ColumnName="Idcard" />
+          <ScalarProperty Name="IsTrueId" ColumnName="IsTrueId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="GradeName" ColumnName="GradeName" />
+          <ScalarProperty Name="GradeDate" ColumnName="GradeDate" />
+          <ScalarProperty Name="GradeReason" ColumnName="GradeReason" />
+          <ScalarProperty Name="UseMoney" ColumnName="UseMoney" />
+          <ScalarProperty Name="FrozenMoney" ColumnName="FrozenMoney" />
+          <ScalarProperty Name="CostMoeny" ColumnName="CostMoeny" />
+          <ScalarProperty Name="SumMoney" ColumnName="SumMoney" />
+          <ScalarProperty Name="WithdrawalMoney" ColumnName="WithdrawalMoney" />
+          <ScalarProperty Name="InvoiceMoney" ColumnName="InvoiceMoney" />
+          <ScalarProperty Name="CoinMoney" ColumnName="CoinMoney" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateId" ColumnName="CreateId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateId" ColumnName="UpdateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UR_PART">
+      <EntityTypeMapping TypeName="KTModel.UR_PART">
+        <MappingFragment StoreEntitySet="UR_PART">
+          <ScalarProperty Name="PART_ID" ColumnName="PART_ID" />
+          <ScalarProperty Name="PART_NAME" ColumnName="PART_NAME" />
+          <ScalarProperty Name="PART_DESC" ColumnName="PART_DESC" />
+          <ScalarProperty Name="PART_CHAR" ColumnName="PART_CHAR" />
+          <ScalarProperty Name="PART_OWNER" ColumnName="PART_OWNER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UR_USERS">
+      <EntityTypeMapping TypeName="KTModel.UR_USERS">
+        <MappingFragment StoreEntitySet="UR_USERS">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_ORG_ID" ColumnName="USER_ORG_ID" />
+          <ScalarProperty Name="USER_LOGIN_NAME" ColumnName="USER_LOGIN_NAME" />
+          <ScalarProperty Name="USER_LOGIN_PASSWD" ColumnName="USER_LOGIN_PASSWD" />
+          <ScalarProperty Name="USER_LOGIN_DATE" ColumnName="USER_LOGIN_DATE" />
+          <ScalarProperty Name="USER_PHONE" ColumnName="USER_PHONE" />
+          <ScalarProperty Name="USER_MOBILE" ColumnName="USER_MOBILE" />
+          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+          <ScalarProperty Name="USER_WORK_NO" ColumnName="USER_WORK_NO" />
+          <ScalarProperty Name="USER_SEX" ColumnName="USER_SEX" />
+          <ScalarProperty Name="USER_BIRTHDAY" ColumnName="USER_BIRTHDAY" />
+          <ScalarProperty Name="USER_WORKED" ColumnName="USER_WORKED" />
+          <ScalarProperty Name="USER_EDUCATION" ColumnName="USER_EDUCATION" />
+          <ScalarProperty Name="USER_ORIGIN" ColumnName="USER_ORIGIN" />
+          <ScalarProperty Name="USER_TITLE" ColumnName="USER_TITLE" />
+          <ScalarProperty Name="USER_WORK_LIMIT" ColumnName="USER_WORK_LIMIT" />
+          <ScalarProperty Name="USER_IDENT_NO" ColumnName="USER_IDENT_NO" />
+          <ScalarProperty Name="USER_IN_DATE" ColumnName="USER_IN_DATE" />
+          <ScalarProperty Name="USER_AREA" ColumnName="USER_AREA" />
+          <ScalarProperty Name="USER_ADDRESS" ColumnName="USER_ADDRESS" />
+          <ScalarProperty Name="USER_POSTAL" ColumnName="USER_POSTAL" />
+          <ScalarProperty Name="USER_ACTIVE" ColumnName="USER_ACTIVE" />
+          <ScalarProperty Name="USER_OUT" ColumnName="USER_OUT" />
+          <ScalarProperty Name="USER_OUT_DATE" ColumnName="USER_OUT_DATE" />
+          <ScalarProperty Name="USER_NOTE" ColumnName="USER_NOTE" />
+          <ScalarProperty Name="USER_CREATE_ID" ColumnName="USER_CREATE_ID" />
+          <ScalarProperty Name="USER_CREATE_DATE" ColumnName="USER_CREATE_DATE" />
+          <ScalarProperty Name="USER_UPDATE_ID" ColumnName="USER_UPDATE_ID" />
+          <ScalarProperty Name="USER_UPDATE_DATE" ColumnName="USER_UPDATE_DATE" />
+          <ScalarProperty Name="USER_PASSWD_CHANGE_DATE" ColumnName="USER_PASSWD_CHANGE_DATE" />
+          <ScalarProperty Name="USER_UNLOCK_DATE" ColumnName="USER_UNLOCK_DATE" />
+          <ScalarProperty Name="USER_ADMIN" ColumnName="USER_ADMIN" />
+          <ScalarProperty Name="USER_UNUSED1" ColumnName="USER_UNUSED1" />
+          <ScalarProperty Name="USER_UNUSED2" ColumnName="USER_UNUSED2" />
+          <ScalarProperty Name="USER_UNUSED3" ColumnName="USER_UNUSED3" />
+          <ScalarProperty Name="USER_UNUSED4" ColumnName="USER_UNUSED4" />
+          <ScalarProperty Name="USER_CHANNEL_ID" ColumnName="USER_CHANNEL_ID" />
+          <ScalarProperty Name="USER_PART" ColumnName="USER_PART" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

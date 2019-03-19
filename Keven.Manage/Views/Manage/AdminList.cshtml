@@ -1,0 +1,111 @@
+﻿@model List<Keven.Model.UR_USERS>
+
+@{
+    ViewBag.Title = "管理员列表";
+    ViewBag.Sidebar = 20;
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            管理员管理
+            @*<small>advanced tables</small>*@
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#"><i class="fa fa-dashboard"></i> 首页</a>
+            </li>
+            <li>
+                <a href="#">系统设置</a>
+            </li>
+            <li class="active">列表</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">列表</h3>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="form-group">
+                            <form action="~/Manage/AdminList" method="post">
+                                关键字：<input type="text" name="keyword" value="@ViewBag.Keyword" />
+                                <button type="submit" class="btn btn-primary" name="btnSearch"><i class="fa fa-fw fa-search"></i> 查询</button>
+                            </form>
+                            <a class="btn pull-right btn-success" href="~/Manage/AdminEdit"><i class="fa fa-fw fa-plus"></i> 新建</a>
+                        </div>
+
+                        <table id="example1" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>用户姓名</th>
+                                    <th>机构</th>
+                                    <th>登录名</th>
+                                    <th>联系电话</th>
+                                    <th>手机</th>
+                                    <th width="150px;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var t in Model)
+                                {
+                                    <tr>
+                                        <td>@t.USER_NAME</td>
+                                        <td>
+                                            @t.USER_ORG_ID
+                                        </td>
+                                        <td>@t.USER_LOGIN_NAME</td>
+                                        <td>@t.USER_PHONE</td>
+                                        <td>@t.USER_MOBILE</td>
+                                        <td>
+                                            <a class="btn-sm btn-info" href="~/Manage/AdminEdit/@t.USER_ID">修改</a>
+                                            <a class="btn-sm btn-danger" href="#" onclick="AdminDel(@t.USER_ID)">删除</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </section><!-- /.content -->
+</div>
+
+<script type="text/javascript">
+    function AdminDel(id) {
+        $.myConfirm({
+            title: '确定删除吗？', message: '删除后不可恢复！', callback: function () {
+                $.ajax({
+                    url: '/Manage/AdminDel?t=' + Math.random(),
+                    method: 'POST',
+                    data: { id: id },
+                    dataType: 'json',
+                    beforeSend: function () {
+                    },
+                    complete: function () {
+                    },
+                    success: function (data) {
+                        if (data.status_code == "0") {
+                            $.myAlert({
+                                title: '提示', message: data.message, callback: function () {
+                                    window.location.reload();
+                                }
+                            });
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+        })
+    }
+
+</script>
+
+

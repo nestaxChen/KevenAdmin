@@ -1,0 +1,76 @@
+﻿<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="~/Content/img/avatar04.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>@Keven.Manage.Models.BaseModels.GetUserName() 您好！</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
+        <!-- search form -->
+        @*<form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>*@
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="header">菜单</li>
+            @*<li class="treeview @(ViewBag.Sidebar == 0 ? "active" : "")">
+            <a href="~/Home">
+                <i class="fa fa-home"></i> <span>首页</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+        </li>*@
+            <li class="treeview @(ViewBag.Sidebar > 0 && ViewBag.Sidebar < 100 ? "active" : "")">
+                <a href="#">
+                    <i class="fa fa-gears"></i> <span>系统设置</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@(ViewBag.Sidebar == 10 ? "active" : "")"><a href="~/Manage/AdminDetail"><i class="fa fa-circle-o"></i>个人信息</a></li>
+                    <li class="@(ViewBag.Sidebar == 20 ? "active" : "")"><a href="~/Manage/AdminList"><i class="fa fa-circle-o"></i>用户管理</a></li>
+                    <li class="@(ViewBag.Sidebar == 30 ? "active" : "")"><a href="~/Manage/PartList"><i class="fa fa-circle-o"></i>角色管理</a></li>
+                    <li class="@(ViewBag.Sidebar == 40 ? "active" : "")"><a href="~/Manage/OrganList"><i class="fa fa-circle-o"></i>机构管理</a></li>
+                    <li class="@(ViewBag.Sidebar == 50 ? "active" : "")"><a href="~/Manage/FuncList"><i class="fa fa-circle-o"></i>菜单管理</a></li>
+                </ul>
+            </li>
+            <li class="treeview @(ViewBag.Sidebar >= 100 && ViewBag.Sidebar < 200 ? "active" : "")">
+                <a href="#">
+                    <i class="fa fa-fw fa-reorder"></i>
+                    <span>基础信息</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@(ViewBag.Sidebar == 100 ? "active" : "")"><a href="~/Config/AreaList"><i class="fa fa-circle-o"></i> 区域管理</a></li>
+                    <li class="@(ViewBag.Sidebar == 110 ? "active" : "")"><a href="~/Config/ClassList"><i class="fa fa-circle-o"></i> 商标分类</a></li>
+                    <li class="@(ViewBag.Sidebar == 120 ? "active" : "")"><a href="~/Config/KefuList"><i class="fa fa-circle-o"></i> 客服管理</a></li>
+                    <li class="@(ViewBag.Sidebar == 130 ? "active" : "")"><a href="~/Config/BaseTypeList"><i class="fa fa-circle-o"></i> 基础类型</a></li>
+                    <li class="@(ViewBag.Sidebar == 140 ? "active" : "")"><a href="~/Config/TypeList"><i class="fa fa-circle-o"></i> 类型管理</a></li>
+
+                </ul>
+            </li>
+            <li class="treeview @(ViewBag.Sidebar >= 200 && ViewBag.Sidebar < 300 ? "active" : "")">
+                <a href="#">
+                    <i class="fa fa-fw fa-reorder"></i>
+                    <span>商标业务</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@(ViewBag.Sidebar == 200 ? "active" : "")"><a href="~/Trademark/TdList"><i class="fa fa-circle-o"></i> 商标注册</a></li>
+                    <li class="@(ViewBag.Sidebar == 210 ? "active" : "")"><a href="~/Trademark/ApplyerList"><i class="fa fa-circle-o"></i> 申请人</a></li>
+                    <li class="@(ViewBag.Sidebar == 220 ? "active" : "")"><a href="~/Trademark/KefuList"><i class="fa fa-circle-o"></i> 客服管理</a></li>
+                    <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
